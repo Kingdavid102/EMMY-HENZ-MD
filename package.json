@@ -7,6 +7,11 @@
   "scripts": {
     "start": "node start.js",
     "dev": "nodemon start.js",
+    "clean": "rm -rf node_modules package-lock.json yarn.lock && npm cache clean --force",
+    "setup": "npm run clean && npm install",
+    "deploy": "npm run setup && npm start",
+    "fix-cache": "yarn cache clean && rm -rf node_modules yarn.lock && npm install",
+    "force-install": "npm install --force --no-package-lock",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
